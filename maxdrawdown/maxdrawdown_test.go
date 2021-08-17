@@ -6,6 +6,14 @@ import (
 	"testing"
 )
 
+// Calc receives a map series and a given window and calculates the maximum drawdown of each record of the series
+// in the given window.
+//
+// Time Complexity is O(w*(n-w)) in terms of n and w, which n is the maximum size of the series map and w is the value
+// of the window. The growth rate of this algorithm is linear O(n), since it depends on the size of the series map.
+//
+// Space complexity O(n) because the result map is created based on the size of series map. Thus memory capacity is not
+// an issue since the 90's, I prefer sacrifice Space Complexity for readability and reusability.
 func Calc(series map[int]float64, window int) map[int]float64 {
 	if window == 0 || series == nil || len(series) < window {
 		return nil
