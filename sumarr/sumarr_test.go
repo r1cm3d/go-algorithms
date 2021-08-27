@@ -27,9 +27,9 @@ func TestSum(t *testing.T) {
 		in   []interface{}
 		want int
 	}{
-		{"1", []interface{}{1}, 1},
-		{"6", []interface{}{1, []interface{}{2, 3}}, 6},
-		{"6", []interface{}{
+		{"first", []interface{}{1}, 1},
+		{"second", []interface{}{1, []interface{}{2, 3}}, 6},
+		{"third", []interface{}{
 			-1,
 			[]interface{}{-2, -3},
 			[]interface{}{1, []interface{}{2, 3}}},
