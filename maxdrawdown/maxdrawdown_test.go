@@ -23,7 +23,7 @@ func Calc(series map[int]float64, window int) map[int]float64 {
 
 	curKey := window
 	for i := window; i < len(series); i++ {
-		initialKey := i-window
+		initialKey := i - window
 		mdd := subMaxDD(series, initialKey, window)
 		results[curKey] = mdd
 		curKey++
@@ -100,9 +100,9 @@ func TestCalcMaxDD(t *testing.T) {
 			0: 500,
 			1: 750,
 			2: 400,
-			3:  600,
-			4:  350,
-			5:  800,
+			3: 600,
+			4: 350,
+			5: 800,
 		}, window: 5}, map[int]float64{
 			5: 0.5333333333333333,
 		}},
